@@ -132,7 +132,7 @@ script:
       /opt/qt510/bin/qt510-env.sh
       export CMAKE_PREFIX_PATH="${CMAKE_PREFIX_PATH}:/opt/qt510/"
       cmake . -DCMAKE_INSTALL_PREFIX=/usr -GNinja -DBoost_DEBUG=ON -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=OFF ..
-      ninja -v -j$(nproc)
+      ninja -v
       make DESTDIR=appdir -j$(nproc) install ; find appdir/
       export ARCH=$(arch)
       ctest .
